@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="董书华">
+    <title></title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#client').on({
+                mouseenter: function () { $('#clientMenu').show(); },
+                mouseleave: function () { $('#clientMenu').hide(); }
+            })
+
+            $('#weibo').on({
+                mouseenter: function () { $('#weiboMenu').show(); },
+                mouseleave: function () { $('#weiboMenu').hide(); }
+            })
+
+            $('#blog').on({
+                mouseenter: function () { $('#blogMenu').show(); },
+                mouseleave: function () { $('#blogMenu').hide(); }
+            })
+
+            $('#mail').on({
+                mouseenter: function () { $('#mailMenu').show(); },
+                mouseleave: function () { $('#mailMenu').hide(); }
+            })
+
+            $('#login').on({
+                mouseenter: function () { $('#loginMenu').show(); },
+                mouseleave: function () { $('#loginMenu').hide(); }
+            })
+        })
+    </script>
+    <style>
+        body {
+            color: #333;
+            font: 12px/20px "SimSun", "宋体", "Arial Narrow", HELVETICA;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .top-nav-wrap {
+            width: 100%;
+            min-width: 1000px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .top-nav {
+            height: 41px;
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            background-color: #fcfcfc;
+        }
+
+        .tn-bg {
+            height: 41px;
+        }
+
+        .top-nav .tn-header {
+            width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "宋体";
+        }
+
+        .top-nav .tn-nav {
+            float: left;
+            _display: inline;
+        }
+
+        .top-nav .tn-title {
+            float: left;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .top-nav .tn-title .tn-tab {
+            border: 1px solid #fcfcfc;
+            border-width: 0 1px;
+            color: #4c4c4c;
+            display: inline-block;
+            line-height: 16px;
+            cursor: pointer;
+            position: relative;
+            padding: 0 2px 0 0;
+        }
+
+        .top-nav .tn-title .tn-tab:hover {
+            border-color: #edeef0;
+            background-color: #edeef0;
+            text-decoration: none;
+            color: #ff8400;
+        }
+
+        .top-nav a {
+            color: #ff8400;
+            text-decoration: none;
+        }
+
+        .top-nav i {
+            font-style: normal;
+            font-weight: normal;
+            display: inline-block;
+            height: 17px;
+            padding: 12px 9px 12px 16px;
+            vertical-align: bottom;
+            _overflow: hidden;
+        }
+
+        .top-nav .tn-arrow {
+            display: inline-block;
+            width: 8px;
+            height: 5px;
+            margin: 0 0 0 5px;
+            overflow: hidden;
+            vertical-align: middle;
+            font-size: 12px;
+            line-height: 13px;
+            background: url(images/icon.png) 0 -977px no-repeat;
+        }
+
+        .tn-topmenulist {
+            color: #333;
+            position: absolute;
+            background: #fff;
+            display: none;
+        }
+
+        .tn-topmenulist-a-client {
+            width: 112px;
+        }
+
+        .tn-topmenulist-a {
+            border: 1px solid #ebbe7a;
+            border-top: none;
+            overflow: hidden;
+            -moz-box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+            -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+            top: 41px;
+            left: 0;
+        }
+
+        .tn-topmenulist .tn-text-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-bottom: -2px;
+        }
+
+        .tn-topmenulist .tn-text-list li {
+            line-height: 31px;
+            border-bottom: 1px solid #fecc5b;
+        }
+
+        .tn-topmenulist .tn-text-list li a {
+            _zoom: 1;
+            display: block;
+            color: #333;
+            padding: 0 15px;
+        }
+
+        .tn-topmenulist .tn-text-list li a:hover {
+            color: #e67902;
+            background: #fff5da;
+            text-decoration: none
+        }
+
+        .tn-person-r {
+            float: right;
+        }
+
+        .tn-topmenulist-a-weibo {
+            width: 78px;
+        }
+
+        .tn-topmenulist-a-blog,
+        .tn-topmenulist-a-mail {
+            width: 110px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="top-nav-wrap">
+        <div class="top-nav">
+            <div class="tn-bg">
+                <div class="tn-header">
+                    <div class="tn-nav">
+                        <div class="tn-title">
+                            <a href="javascript:;" class="tn-tab"><i>设为首页</i></a>
+                        </div>
+                        <div class="tn-title">
+                            <a href="#" class="tn-tab"><i>手机新浪网</i></a>
+                        </div>
+                        <div class="tn-title" id="client">
+                            <a class="tn-tab"><i>移动客户端<span class="tn-arrow"></span></i></a>
+                            <div id="clientMenu" class="tn-topmenulist tn-topmenulist-a tn-topmenulist-a-client">
+                                <ul class="tn-text-list">
+                                    <li><a href="#">新浪微博</a></li>
+                                    <li><a href="#">新浪新闻</a></li>
+                                    <li><a href="#">新浪体育</a></li>
+                                    <li><a href="#">新浪娱乐</a></li>
+                                    <li><a href="#">新浪财经</a></li>
+                                    <li><a href="#">新浪港股通</a></li>
+                                    <li><a href="#">新浪博客</a></li>
+                                    <li><a href="#">天气通</a></li>
+                                    <li><a href="#">新浪游戏</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tn-person-r">
+                        <div class="tn-title tn-title-login" id="login">
+                            <a href="javascript:;" class="tn-tab"><i>登录</i></a>
+                            <div id="loginMenu" class="tn-topmenulist">
+                            </div>
+                        </div>
+
+                        <div class="tn-title" id="weibo">
+                            <a href="#" class="tn-tab"><i>微博<span class="tn-arrow"></span></i></a>
+                            <div id="weiboMenu" class="tn-topmenulist tn-topmenulist-a tn-topmenulist-a-weibo">
+                                <ul class="tn-text-list">
+                                    <li><a href="#" title="私信">私信</a></li>
+                                    <li><a href="#" title="评论">评论</a></li>
+                                    <li><a href="#" title="@我">@我</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tn-title" id="blog">
+                            <a href="#" class="tn-tab"><i>博客<span class="tn-arrow"></span></i></a>
+                            <div id="blogMenu" class="tn-topmenulist tn-topmenulist-a tn-topmenulist-a-blog">
+                                <ul class="tn-text-list">
+                                    <li><a href="#" title="博客评论">博客评论</a></li>
+                                    <li><a href="#" title="未读提醒">未读提醒</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tn-title" id="mail">
+                            <a href="#" class="tn-tab"><i>邮箱<span class="tn-arrow"></span></i></a>
+                            <div id="mailMenu" class="tn-topmenulist tn-topmenulist-a tn-topmenulist-a-mail">
+                                <ul class="tn-text-list">
+                                    <li><a href="#" title="免费邮箱">免费邮箱</a></li>
+                                    <li><a href="#" title="VIP邮箱">VIP邮箱</a></li>
+                                    <li><a href="#" title="企业邮箱">企业邮箱</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tn-title">
+                            <a href="#" class="tn-tab"><i>网站导航</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
